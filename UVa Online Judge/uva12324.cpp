@@ -56,10 +56,7 @@ int main()
 		multiset<int> s;
 
 		REPD(i,n){
-			if(u[i] == 0){
-				s.insert(v[i]);
-			}
-			else{
+			if(u[i] != 0){
 				REP(j,u[i]){
 					if(!s.empty()){
 						sum -= (*s.rbegin())/2;
@@ -69,8 +66,8 @@ int main()
 						s.erase(it);
 					}
 				}
-				s.insert(v[i]);
 			}
+			s.insert(v[i]);
 		}
 		cout << sum << endl;
 		cin >> n;
